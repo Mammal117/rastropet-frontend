@@ -1,6 +1,6 @@
-# RastroPet — Backend
+# RastroPet — Backend y Frontend
 
-Ortiz Bautista Josue Ahuitz
+Perez Cruz Haniel Eliud
 
 
 
@@ -66,6 +66,7 @@ Sistema full-stack para el reporte y seguimiento de mascotas perdidas en la comu
 
 ## Diagrama Entidad-Relación
 
+<img width="1121" height="838" alt="image" src="https://github.com/user-attachments/assets/e3ac3b9b-2bb0-44fa-8c1d-ff5a8f3ff09d" />
 
 
 ```
@@ -420,45 +421,34 @@ Para probar: abrir Bruno → **Open Collection** → seleccionar la carpeta `bac
 - **Certificado SSL:** Let's Encrypt (Certbot), renovación automática
 - **Correo saliente:** Postfix configurado directamente en el VPS, con registros SPF y DKIM
 
-```
-[ AQUÍ SE PUEDE AGREGAR UN RESUMEN BREVE DE LA CONFIGURACIÓN DE NGINX / CERTBOT / POSTFIX SI SE DESEA DOCUMENTAR EL PASO A PASO ]
-```
 
----
 
 ## Capturas de pantalla
 
-> Agregar aquí capturas del sistema funcionando: login, dashboard por cada rol, creación de reporte, mapa de avistamientos, panel de admin, correo/SMS/WhatsApp recibido, etc.
+
 
 **Login**
 
-```
 
-```
+<img width="1920" height="887" alt="image" src="https://github.com/user-attachments/assets/74bf76dd-eea6-47ec-b34b-70d912e0f220" />
 
-**Dashboard — Administrador**
 
-```
-[ CAPTURA ]
-```
 
-**Dashboard — Dueño**
 
-```
-[ CAPTURA ]
-```
+**Dashboard**
 
-**Dashboard — Voluntario**
 
-```
-[ CAPTURA ]
-```
+<img width="1600" height="858" alt="image" src="https://github.com/user-attachments/assets/9a7d2d0b-2b09-4564-b158-3f7efcff678e" />
 
-**Notificación recibida (correo / SMS / WhatsApp)**
 
-```
-[ CAPTURA ]
-```
+
+
+**Notificación recibida (correo)**
+
+
+<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/bcd967a8-292c-43a6-a7b8-c42ef3bf8ac9" />
+
+
 
 ---
 
@@ -466,13 +456,15 @@ Para probar: abrir Bruno → **Open Collection** → seleccionar la carpeta `bac
 
 **Prototipo navegable:** ``
 
-Incluye las pantallas principales para los tres roles (administrador, dueño y voluntario), paleta de colores propia justificada con base en teoría del color, y el logo original del equipo.
-
+Link de figma: https://www.figma.com/proto/HNcLUicQgIHEAWEYhYz0uB/proyecto1?node-id=106-18
 ---
 
-## Tablero de GitHub Projects
+## Tablero GitHub Projects
 
-**Tablero (visibilidad pública):**
+Frontend:
+https://github.com/Mammal117/rastropet-frontend.git
+Backend:
+https://github.com/Mammal117/rastropet-backend.git
 
 ---
 
