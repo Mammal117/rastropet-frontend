@@ -1,0 +1,143 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #1C2B24;
+  color: #fff;
+  padding: 24px 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0 10px 24px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: #C9D4CE;
+  font-size: 14px;
+  background: none;
+  border: none;
+  margin-bottom: 4px;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-item.active {
+  background: #E8A33D;
+  color: #1C2B24;
+  font-weight: 700;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 64px;
+  background: #fff;
+  border-bottom: 1px solid #E7E5DF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+
+.navbar .page-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-chip .name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-chip .role {
+  font-size: 11px;
+  color: #78766F;
+}
+
+.btn-logout {
+  border: 1px solid #E7E5DF;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.content {
+  padding: 28px;
+}
+
+.content h1 {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  color: #78766F;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+.logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 10px 32px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 16px;
+}
+
+.logo-wrap .logo {
+  padding: 0;
+  font-size: 20px;
+}
+.avatar-fallback {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #E8A33D;
+  color: #1C2B24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}

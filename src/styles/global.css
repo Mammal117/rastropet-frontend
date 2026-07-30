@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', -apple-system, sans-serif;
+  color: #1C2B24;
+}
+
+h1, h2, h3, .logo, .login-brand h1 {
+  font-family: 'Fredoka', sans-serif;
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: 'Nunito', sans-serif;
+}

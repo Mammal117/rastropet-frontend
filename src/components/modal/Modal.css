@@ -1,0 +1,33 @@
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(28, 43, 36, 0.45);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 50;
+}
+
+.modal-card {
+  background: #fff; border-radius: 12px; padding: 24px;
+  width: 100%; max-width: 420px; max-height: 90vh; overflow-y: auto;
+}
+
+.modal-card h3 { font-size: 17px; margin-bottom: 8px; }
+.modal-card p { font-size: 14px; color: #46443F; margin-bottom: 20px; }
+
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 10px; }
+
+.btn-secondary {
+  border: 1px solid #E7E5DF; background: #fff; border-radius: 8px;
+  padding: 0 16px; height: 38px; font-size: 13px; font-weight: 600; color: #46443F;
+}
+
+.btn-danger {
+  border: none; background: #C23030; color: #fff; border-radius: 8px;
+  padding: 0 16px; height: 38px; font-size: 13px; font-weight: 600;
+}
+
+.modal-field { margin-bottom: 14px; }
+.modal-field label { display: block; font-size: 12px; font-weight: 600; color: #46443F; margin-bottom: 5px; }
+.modal-field input, .modal-field select {
+  width: 100%; height: 38px; border: 1px solid #E7E5DF; border-radius: 8px;
+  padding: 0 12px; font-size: 13px;
+}
