@@ -37,12 +37,6 @@ export default function LoginForm() {
     if (success) navigate('/dashboard');
   }
 
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-    // Forzar la salida completa del navegador hacia la ruta de Laravel en el VPS
-    window.location.href = 'https://2.24.78.20.nip.io/auth/google';
-  };
-
   return (
     <div className="login-screen">
       <div className="login-brand">
@@ -113,10 +107,9 @@ export default function LoginForm() {
           <div style={{ flexGrow: 1, height: '1px', backgroundColor: '#ddd' }}></div>
         </div>
 
-        {/* Botón de Google */}
-        <button
-          type="button"
-          onClick={handleGoogleLogin}
+        {/* Enlace nativo de Google Auth */}
+        <a
+          href="https://2.24.78.20.nip.io/auth/google"
           className="btn-google"
           style={{
             width: '100%',
@@ -130,7 +123,9 @@ export default function LoginForm() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '10px',
-            color: '#333'
+            color: '#333',
+            textDecoration: 'none',
+            boxSizing: 'border-box'
           }}
         >
           <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
@@ -140,7 +135,7 @@ export default function LoginForm() {
             <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
           </svg>
           Continuar con Google
-        </button>
+        </a>
 
         {/* Enlace para registrarse */}
         <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '14px', color: '#666' }}>
