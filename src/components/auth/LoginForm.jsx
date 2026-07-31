@@ -1,4 +1,110 @@
-{/* Botón de Google forzado */}
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import './LoginForm.css';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export default function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
+  const [submitting, setSubmitting] = useState(false);
+  const { login, error } = useAuth();
+  const navigate = useNavigate();
+
+  function validate() {
+    const errors = {};
+    if (!email.trim()) {
+      errors.email = 'Ingresa tu correo.';
+    } else if (!EMAIL_REGEX.test(email)) {
+      errors.email = 'Ese correo no tiene un formato valido.';
+    }
+    if (!password.trim()) {
+      errors.password = 'Ingresa tu contraseña.';
+    }
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (!validate()) return;
+    setSubmitting(true);
+    const success = await login(email.trim(), password);
+    setSubmitting(false);
+    if (success) navigate('/dashboard');
+  }
+
+  return (
+    <div className="login-screen">
+      <div className="login-brand">
+        <div className="login-brand-overlay">
+          <h1>RASTROPET</h1>
+          <p>Cada minuto cuenta.<br />Encuentra a tu mascota mas rapido.</p>
+        </div>
+      </div>
+
+      <div className="login-form-wrap">
+        <h2>Bienvenido de nuevo</h2>
+
+        {error && <div className="form-error">{error}</div>}
+
+        <form className="login-form-fields" onSubmit={handleSubmit} noValidate>
+          <div className="field">
+            <input
+              type="email"
+              placeholder="Correo"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+            />
+            {fieldErrors.email && <div className="field-error">{fieldErrors.email}</div>}
+          </div>
+
+          <div className="field" style={{ position: 'relative' }}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Contrasena"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+              style={{ paddingRight: '40px', width: '100%', boxSizing: 'border-box' }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              style={{
+                position: 'absolute',
+                right: '12px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '18px',
+                padding: 0,
+                color: '#666'
+              }}
+              title={showPassword ? 'Ocultar contraseña' : 'Ver contraseña'}
+            >
+              {showPassword ? '👁️' : '👁️‍🗨️'}
+            </button>
+            {fieldErrors.password && <div className="field-error">{fieldErrors.password}</div>}
+          </div>
+
+          <button type="submit" className="btn-primary" disabled={submitting}>
+            {submitting ? 'Entrando...' : 'Entrar'}
+          </button>
+        </form>
+
+        <div style={{ display: 'flex', alignItems: 'center', margin: '20px 0', width: '100%' }}>
+          <div style={{ flexGrow: 1, height: '1px', backgroundColor: '#ddd' }}></div>
+          <span style={{ padding: '0 10px', color: '#888', fontSize: '14px' }}>o</span>
+          <div style={{ flexGrow: 1, height: '1px', backgroundColor: '#ddd' }}></div>
+        </div>
+
         <button
           type="button"
           onClick={() => {
@@ -28,3 +134,14 @@
           </svg>
           Continuar con Google
         </button>
+
+        <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '14px', color: '#666' }}>
+          ¿No tienes una cuenta?{' '}
+          <Link to="/register" style={{ color: '#ff7a00', fontWeight: '600', textDecoration: 'none' }}>
+            Regístrate aquí
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
