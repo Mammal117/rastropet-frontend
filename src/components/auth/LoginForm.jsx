@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { API_URL } from '../../api/client';
 import './LoginForm.css';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Las rutas de Google (/auth/google) viven en routes/web.php, no bajo /api,
-// así que se derivan quitándole el "/api" a la URL base de axios en vez de
-// tenerla fija — así funciona igual en local y cuando cambie el dominio en el VPS.
-const BACKEND_ROOT = API_URL.replace(/\/api\/?$/, '');
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -45,8 +39,8 @@ export default function LoginForm() {
 
   const handleGoogleLogin = (e) => {
     e.preventDefault();
-    // Forzar la salida completa del navegador hacia el backend de Laravel
-    window.location.assign(`${BACKEND_ROOT}/auth/google`);
+    // Forzar la salida completa del navegador hacia la ruta de Laravel en el VPS
+    window.location.href = 'https://2.24.78.20.nip.io/auth/google';
   };
 
   return (
