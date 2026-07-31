@@ -108,7 +108,7 @@ export default function LoginForm() {
         <button
           type="button"
           onClick={() => {
-            window.location.replace('https://2.24.78.20.nip.io/auth/google');
+            window.location.href = 'http://2.24.78.20.nip.io/auth/google';
           }}
           className="btn-google"
           style={{
